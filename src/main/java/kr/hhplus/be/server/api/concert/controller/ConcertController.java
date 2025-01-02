@@ -20,26 +20,23 @@ public class ConcertController {
      * 대기열 토큰 발급
      */
     @PostMapping("/concert/info")
-    public ConcertResultDTO getConcertInfo(@RequestBody ConcertRequestDTO concertDTO) throws Exception {
-        ConcertResultDTO result = new ConcertResultDTO();
-        return result;
+    public ConcertResultDTO getConcertInfo(@RequestBody ConcertRequestDTO param) throws Exception {
+        return concertFacade.getConcertInfo(param);
     }
 
     /**
      * 콘서트 좌석 예약 요청
      */
     @PostMapping("/concert/reservation")
-    public ConcertResultDTO reserveConcert(@RequestBody ConcertRequestDTO concertRequestDTO) throws Exception {
-        ConcertResultDTO result = new ConcertResultDTO();
-        return result;
+    public ConcertResultDTO reserveConcert(@RequestBody ConcertRequestDTO param) throws Exception {
+        return concertFacade.reserveConcert(param);
     }
 
     /**
      * 콘서트 결제 요청 API
      */
     @PostMapping("/concert/payment/approval")
-    public ConcertResultDTO approvePaymentForConcert(@RequestBody ConcertRequestDTO concertRequestDTO) throws Exception {
-        ConcertResultDTO result = new ConcertResultDTO();
-        return result;
+    public ConcertResultDTO approvePaymentForConcert(@RequestBody ConcertRequestDTO param) throws Exception {
+        return concertFacade.approvePaymentForConcert(param);
     }
 }
